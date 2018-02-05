@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Game of Life</title>
+	<script src='scripts/gameOfLife.js'></script>
+</head>
+
+<body>
+
+	<canvas id='game'></canvas>
+	<br>
+	<label for='gameWidth'>Width: </label>
+	<input id='gameWidth' type='number' value='1000'>
+	
+	<label for='gameHeight'>Height: </label>
+	<input id='gameHeight' type='number' value='500'>
+	
+	<label for='squareSize'>Square Size: </label>
+	<input id='squareSize' type='number' value='10'>
+	<br>
+	
+	<label for='numTeams'>Number of Teams: </label>
+	<input id='numTeams' type='number' value='1' min='0' onchange='createTeamOptions()'>
+	<form id='teams'>
+		<label for='team1'>Team 1: </label>
+		<input id='team1' type='color'>
+		<input name='selectedColor' type='radio' checked>
+	</form>
+	
+	<button id='start' onclick='startGame()'>BEGIN</button>
+	<button id='step' onclick='board.update()'>STEP</button>
+	<button id='pauseButton' onclick='board.pause(); '>PAUSE</button>
+	
+	<br>
+	<label for='textCreate'>Number to Create: </label>
+	<input id='textCreate' type='text' value='0'>
+	<button id='create' onclick='board.createPoints(document.getElementById("textCreate").value)'> CREATE</button>
+</body>
+
+
+</html>
+
